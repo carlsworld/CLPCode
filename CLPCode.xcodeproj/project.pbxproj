@@ -43,6 +43,7 @@
 		618CE595208ECE1800EB6754 /* CLPhotoBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPhotoBrowserCell.m; sourceTree = "<group>"; };
 		618CE59A208F294500EB6754 /* CLPCommonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLPCommonKit.h; sourceTree = "<group>"; };
 		618CE59B208F294500EB6754 /* CLPCommonKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLPCommonKit.m; sourceTree = "<group>"; };
+		618CE59D208F3F4900EB6754 /* CLPHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLPHeader.h; sourceTree = "<group>"; };
 		845FD2DBE0F40B55B00AF648 /* Pods-CLPCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLPCode/Pods-CLPCode.release.xcconfig"; sourceTree = "<group>"; };
 		91B09D0FF7435C5EF4404180 /* Pods-CLPCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLPCode/Pods-CLPCode.debug.xcconfig"; sourceTree = "<group>"; };
 		94DE055FAA50B6A979C9B8FF /* libPods-CLPCode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLPCode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				618CE58D208ECE1800EB6754 /* CLPSystemMacro.h */,
+				618CE59D208F3F4900EB6754 /* CLPHeader.h */,
 			);
 			path = Header;
 			sourceTree = "<group>";
