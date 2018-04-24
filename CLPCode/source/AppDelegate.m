@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "CLPSystemMacro.h"
 
 @interface AppDelegate ()
 

@@ -9,7 +9,6 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#import "CLPSystemMacro.h"
 #import <Masonry.h>
 #import <UIImageView+WebCache.h>
 

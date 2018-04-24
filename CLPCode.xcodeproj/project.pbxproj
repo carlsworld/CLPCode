@@ -22,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A74DDA15C3457E40A0445FF /* Pods-CLPCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLPCode/Pods-CLPCode.release.xcconfig"; sourceTree = "<group>"; };
 		605A882B7FDB10EBEFD56135 /* libPods-CLPCode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLPCode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		618CE56F208ECC4700EB6754 /* CLPCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLPCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		618CE572208ECC4700EB6754 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,10 +43,9 @@
 		618CE595208ECE1800EB6754 /* CLPhotoBrowserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPhotoBrowserCell.m; sourceTree = "<group>"; };
 		618CE59A208F294500EB6754 /* CLPCommonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLPCommonKit.h; sourceTree = "<group>"; };
 		618CE59B208F294500EB6754 /* CLPCommonKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLPCommonKit.m; sourceTree = "<group>"; };
-		8F43B5215DAF9A0A8F3585DF /* Pods-CLPCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLPCode/Pods-CLPCode.debug.xcconfig"; sourceTree = "<group>"; };
+		845FD2DBE0F40B55B00AF648 /* Pods-CLPCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLPCode/Pods-CLPCode.release.xcconfig"; sourceTree = "<group>"; };
+		91B09D0FF7435C5EF4404180 /* Pods-CLPCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLPCode/Pods-CLPCode.debug.xcconfig"; sourceTree = "<group>"; };
 		94DE055FAA50B6A979C9B8FF /* libPods-CLPCode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLPCode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2602BB16FAACB97DF75A818 /* Pods-CLPCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLPCode/Pods-CLPCode.debug.xcconfig"; sourceTree = "<group>"; };
-		F2D2BB3F24A1BC3AAEC6508C /* Pods-CLPCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLPCode/Pods-CLPCode.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +82,6 @@
 		618CE571208ECC4700EB6754 /* CLPCode */ = {
 			isa = PBXGroup;
 			children = (
-				618CE572208ECC4700EB6754 /* AppDelegate.h */,
-				618CE573208ECC4700EB6754 /* AppDelegate.m */,
 				618CE588208ECC8000EB6754 /* Class */,
 				618CE589208ECC8000EB6754 /* source */,
 			);
@@ -95,8 +91,6 @@
 		618CE588208ECC8000EB6754 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				618CE575208ECC4700EB6754 /* ViewController.h */,
-				618CE576208ECC4700EB6754 /* ViewController.m */,
 				618CE58B208ECE1800EB6754 /* Common */,
 				618CE58E208ECE1800EB6754 /* Kit */,
 			);
@@ -106,6 +100,10 @@
 		618CE589208ECC8000EB6754 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				618CE572208ECC4700EB6754 /* AppDelegate.h */,
+				618CE573208ECC4700EB6754 /* AppDelegate.m */,
+				618CE575208ECC4700EB6754 /* ViewController.h */,
+				618CE576208ECC4700EB6754 /* ViewController.m */,
 				618CE578208ECC4700EB6754 /* Main.storyboard */,
 				618CE57B208ECC4E00EB6754 /* Assets.xcassets */,
 				618CE57D208ECC4E00EB6754 /* LaunchScreen.storyboard */,
@@ -175,10 +173,8 @@
 		FAD469580A16847B08C46A42 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8F43B5215DAF9A0A8F3585DF /* Pods-CLPCode.debug.xcconfig */,
-				F2D2BB3F24A1BC3AAEC6508C /* Pods-CLPCode.release.xcconfig */,
-				B2602BB16FAACB97DF75A818 /* Pods-CLPCode.debug.xcconfig */,
-				0A74DDA15C3457E40A0445FF /* Pods-CLPCode.release.xcconfig */,
+				91B09D0FF7435C5EF4404180 /* Pods-CLPCode.debug.xcconfig */,
+				845FD2DBE0F40B55B00AF648 /* Pods-CLPCode.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -453,7 +449,7 @@
 		};
 		618CE586208ECC4E00EB6754 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2602BB16FAACB97DF75A818 /* Pods-CLPCode.debug.xcconfig */;
+			baseConfigurationReference = 91B09D0FF7435C5EF4404180 /* Pods-CLPCode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -471,7 +467,7 @@
 		};
 		618CE587208ECC4E00EB6754 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A74DDA15C3457E40A0445FF /* Pods-CLPCode.release.xcconfig */;
+			baseConfigurationReference = 845FD2DBE0F40B55B00AF648 /* Pods-CLPCode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CLPSystemMacro.h"
 
 @protocol CLPBrowserItemDelegate;
 @interface CLPBrowserItem : UIView
