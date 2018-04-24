@@ -9,8 +9,8 @@
 #ifndef CLPHeader_h
 #define CLPHeader_h
 
-#import <Masonry.h>
-#import <UIImageView+WebCache.h>
+#import <Masonry/Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "CLPSystemMacro.h"
 
 #endif /* CLPHeader_h */
