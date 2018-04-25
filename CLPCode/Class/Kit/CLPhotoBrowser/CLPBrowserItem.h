@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CLPHeader.h"
 
 @protocol CLPBrowserItemDelegate;
 @interface CLPBrowserItem : UIView

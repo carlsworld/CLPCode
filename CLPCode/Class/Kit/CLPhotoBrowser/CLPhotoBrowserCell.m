@@ -21,15 +21,10 @@
 - (CLPBrowserItem *)browserItem
 {
     if(!_browserItem){
-        _browserItem = [[CLPBrowserItem alloc]init];
+        _browserItem = [[CLPBrowserItem alloc]initWithFrame:self.bounds];
         [self.contentView addSubview:_browserItem];
-        
-        [_browserItem mas_makeConstraints:^(MASConstraintMaker *make) {
-           	make.edges.mas_equalTo(self.contentView);
-        }];
     }
     return _browserItem;
 }
-
 
 @end

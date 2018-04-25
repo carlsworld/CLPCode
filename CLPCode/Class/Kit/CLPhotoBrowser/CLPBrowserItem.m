@@ -45,8 +45,9 @@
  */
 - (id)copy
 {
-    CLPBrowserItem* item = [[CLPBrowserItem alloc]init];
+    CLPBrowserItem* item = [[CLPBrowserItem alloc]initWithFrame:self.bounds];
     [item setItemData:_itemData];
+    item.tag = self.tag;
     [item.scroll setScrollEnabled:NO];
     return item;
 }
@@ -68,16 +69,14 @@
 
 - (void)p_layout
 {
-    [self.scroll mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self);
-    }];
-    [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(self.scroll);
-        make.size.mas_equalTo(self.scroll);
-    }];
-    [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.bgView);
-    }];
+    self.scroll.frame = self.bounds;
+    self.bgView.frame = self.scroll.bounds;
+    self.imgView.frame = self.bgView.bounds;
+    
+    UIViewAutoresizing autoresizing = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    self.scroll.autoresizingMask = autoresizing;
+    self.bgView.autoresizingMask = autoresizing;
+    self.imgView.autoresizingMask = autoresizing;
 }
 
 #pragma mark - scrollViewDelegate

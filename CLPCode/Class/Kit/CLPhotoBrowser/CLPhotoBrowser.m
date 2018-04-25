@@ -79,12 +79,8 @@
 
 - (void)p_layout
 {
-    [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
-       	make.edges.mas_equalTo(self);
-    }];
-    [self.collection mas_makeConstraints:^(MASConstraintMaker *make) {
-       	make.edges.mas_equalTo(self);
-    }];
+    self.bgView.frame = self.bounds;
+    self.collection.frame = self.bounds;
 }
 
 #pragma mark - # FCPhotoBrowserCellDelegate
@@ -92,27 +88,20 @@
 - (void)photoBrowserSingleTapWithItem:(CLPBrowserItem *)item
 {
     CGRect rect =  CGRectZero;
-    id tem = self.items[_currentIndex];
+    id tem = self.items[item.tag];
     if([tem valueForKey:@"rect"] && [tem[@"rect"] isKindOfClass:[NSValue class]]){
         rect = [tem[@"rect"] CGRectValue];
     }
 	if(rect.size.width){//如果当前item设置了frame，则创建一个item用于缩放
         [self photoBrowserDragBeganWithItem:item];
-        [self layoutIfNeeded];
         [self.bgView setAlpha:0];
     }
-
+	
     [UIView animateWithDuration:.25 animations:^{
         if(rect.size.width){
-            [self.dragItem mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_offset(rect.origin.y);
-                make.left.mas_offset(rect.origin.x);
-                make.width.mas_equalTo(rect.size.width);
-                make.height.mas_equalTo(rect.size.height);
-            }];
-            [self layoutIfNeeded];
+            self.dragItem.frame = rect;
         }else{
-            [_bgView setAlpha:0];
+            [self.bgView setAlpha:0];
         }
     } completion:^(BOOL finished) {
         if(finished){
@@ -141,12 +130,7 @@
         self.dragItem = dragItem;
         _dragMax = DRAG_MAX;
         _originSize = item.bounds.size;
-        [dragItem mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_offset(0);
-            make.left.mas_offset(0);
-            make.width.mas_equalTo(_originSize.width);
-            make.height.mas_equalTo(_originSize.height);
-        }];
+        dragItem.frame = CGRectMake(0, 0, _originSize.width, _originSize.height);
     }
 }
 
@@ -170,19 +154,9 @@
             scale_height = _originSize.height*itemProgress;
             CGFloat item_width = _originSize.width-scale_width;
             CGFloat item_height = _originSize.height-scale_height;
-            [self.dragItem mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_offset(scale_height*_scaleY+p1.y);
-                make.left.mas_offset(scale_width*_scaleX+p1.x);
-                make.width.mas_equalTo(item_width);
-                make.height.mas_equalTo(item_height);
-            }];
+            self.dragItem.frame = CGRectMake(scale_width*_scaleX+p1.x, scale_height*_scaleY+p1.y, item_width, item_height);
         }else{
-            [self.dragItem mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_offset(0);
-                make.left.mas_offset(scale_width*_scaleX+p1.x);
-                make.width.mas_equalTo(_originSize.width);
-                make.height.mas_equalTo(_originSize.height);
-            }];
+            self.dragItem.frame = CGRectMake(scale_width*_scaleX+p1.x, 0, _originSize.width, _originSize.height);
         }
     }else{
         [self photoBrowserDragBeganWithItem:item];
@@ -194,37 +168,25 @@
 {
     if(_progress>1.0){//超过最大拖动
         CGRect rect =  CGRectZero;
-        id tem = self.items[_currentIndex];
+        id tem = self.items[item.tag];
         if([tem valueForKey:@"rect"] && [tem[@"rect"] isKindOfClass:[NSValue class]]){
             rect = [tem[@"rect"] CGRectValue];
         }
         [UIView animateWithDuration:.25 animations:^{
             if(rect.size.width){
-                [self.dragItem mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.top.mas_offset(rect.origin.y);
-                    make.left.mas_offset(rect.origin.x);
-                    make.width.mas_equalTo(rect.size.width);
-                    make.height.mas_equalTo(rect.size.height);
-                }];
-                [self layoutIfNeeded];
+                self.dragItem.frame = rect;
             }else{
-             	[_dragItem setAlpha:0];
+             	[self.dragItem setAlpha:0];
             }
         } completion:^(BOOL finished) {
-            [_dragItem removeFromSuperview];
-            _dragItem = nil;
+            [self.dragItem removeFromSuperview];
+            self.dragItem = nil;
             [self removeFromSuperview];
         }];
     }else{
         [UIView animateWithDuration:.25 animations:^{
             [self.bgView setAlpha:1.0];
-            [self.dragItem mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_offset(0);
-                make.left.mas_offset(0);
-                make.width.mas_equalTo(_originSize.width);
-                make.height.mas_equalTo(_originSize.height);
-            }];
-            [self layoutIfNeeded];
+            self.dragItem.frame = CGRectMake(0, 0, _originSize.width, _originSize.height);
         } completion:^(BOOL finished) {
             if(finished && !decelerate){
                 [self photoBrowserDecelerateWithItem:item];
@@ -262,6 +224,7 @@
     CLPhotoBrowserCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"photo_browser_cell" forIndexPath:indexPath];
     cell.itemData = _items[indexPath.row];
     cell.browserItem.delegate = self;
+    cell.browserItem.tag = indexPath.row;
     return cell;
 }
 
