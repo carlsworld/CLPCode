@@ -7,7 +7,7 @@
 //
 
 #import "CLPBrowserItem.h"
-#import <UIImageView+WebCache.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CLPBrowserItem ()<UIScrollViewDelegate>
 
