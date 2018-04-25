@@ -9,7 +9,6 @@
 #ifndef CLPHeader_h
 #define CLPHeader_h
 
-#import <SDWebImage/UIImageView+WebCache.h>
 #import "CLPSystemMacro.h"
 
 #endif /* CLPHeader_h */
