@@ -7,6 +7,7 @@
 //  快速创建视图
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface CLPCommonKit : NSObject
 

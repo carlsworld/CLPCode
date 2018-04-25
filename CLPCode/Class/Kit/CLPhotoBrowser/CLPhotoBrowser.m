@@ -59,8 +59,8 @@
             self.alpha = 1.0;
         }];
     }
-   	[self.collection setContentSize:CGSizeMake(kScreen.width*_items.count, 0)];
-	[self.collection setContentOffset:CGPointMake(kScreen.width*_currentIndex, 0)];
+   	[self.collection setContentSize:CGSizeMake(CGRectGetWidth(self.bounds)*_items.count, 0)];
+	[self.collection setContentOffset:CGPointMake(CGRectGetWidth(self.bounds)*_currentIndex, 0)];
 }
 
 #pragma mark - # Private
@@ -113,8 +113,8 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat f_x = scrollView.contentOffset.x;
-    _currentIndex = f_x/kScreen.width;
-    if(_currentIndex != _lastIndex && f_x == kScreen.width*_currentIndex){
+    _currentIndex = f_x/CGRectGetWidth(self.bounds);
+    if(_currentIndex != _lastIndex && f_x == CGRectGetWidth(self.bounds)*_currentIndex){
         NSIndexPath* indexPath = [NSIndexPath indexPathForItem:_lastIndex inSection:0];
         CLPhotoBrowserCell* cell = (CLPhotoBrowserCell* )[self.collection cellForItemAtIndexPath:indexPath];
         cell.browserItem.scroll.zoomScale = 1.0;
@@ -204,7 +204,7 @@
     self.dragItem = nil;
     self.collection.scrollEnabled = YES;
     self.collection.alpha = 1.0;
-    [self.bgView setBackgroundColor:colorFromRGBA(0x000000, 1)];
+    [self.bgView setBackgroundColor:[UIColor blackColor]];
 }
 
 #pragma mark - # UICollectionViewDelegate
