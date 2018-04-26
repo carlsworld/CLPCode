@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'SimpleKit' do |sk|
 	sk.ios.deployment_target = '8.0'
-	sk.source_files = 'CLPCode/Class/Kit/CLSimpleKit/*.{h,m}
+	sk.source_files = 'CLPCode/Class/Kit/CLPSimpleKit/*.{h,m}
   end
 
   s.subspec 'PhotoBrowser' do |pb|
