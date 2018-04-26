@@ -9,6 +9,6 @@
 #ifndef CLPHeader_h
 #define CLPHeader_h
 
-#import "CLPSystemMacro.h"
+#import "CLPHeader.h"
 
 #endif /* CLPHeader_h */

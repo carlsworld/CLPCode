@@ -18,6 +18,7 @@
 		618CE597208ECE1900EB6754 /* CLPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 618CE593208ECE1800EB6754 /* CLPhotoBrowser.m */; };
 		618CE598208ECE1900EB6754 /* CLPhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 618CE595208ECE1800EB6754 /* CLPhotoBrowserCell.m */; };
 		618CE59C208F294500EB6754 /* CLPCommonKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 618CE59B208F294500EB6754 /* CLPCommonKit.m */; };
+		618CE5A02091BCE800EB6754 /* CLPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 618CE59F2091BCE800EB6754 /* CLPButton.m */; };
 		744479FE83196B8BCD28C45C /* libPods-CLPCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 605A882B7FDB10EBEFD56135 /* libPods-CLPCode.a */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		618CE59A208F294500EB6754 /* CLPCommonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLPCommonKit.h; sourceTree = "<group>"; };
 		618CE59B208F294500EB6754 /* CLPCommonKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLPCommonKit.m; sourceTree = "<group>"; };
 		618CE59D208F3F4900EB6754 /* CLPHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLPHeader.h; sourceTree = "<group>"; };
+		618CE59E2091BCE800EB6754 /* CLPButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLPButton.h; sourceTree = "<group>"; };
+		618CE59F2091BCE800EB6754 /* CLPButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLPButton.m; sourceTree = "<group>"; };
 		845FD2DBE0F40B55B00AF648 /* Pods-CLPCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-CLPCode/Pods-CLPCode.release.xcconfig"; sourceTree = "<group>"; };
 		91B09D0FF7435C5EF4404180 /* Pods-CLPCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLPCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CLPCode/Pods-CLPCode.debug.xcconfig"; sourceTree = "<group>"; };
 		94DE055FAA50B6A979C9B8FF /* libPods-CLPCode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CLPCode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +162,8 @@
 			children = (
 				618CE59A208F294500EB6754 /* CLPCommonKit.h */,
 				618CE59B208F294500EB6754 /* CLPCommonKit.m */,
+				618CE59E2091BCE800EB6754 /* CLPButton.h */,
+				618CE59F2091BCE800EB6754 /* CLPButton.m */,
 			);
 			path = CLPSimpleKit;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				618CE577208ECC4700EB6754 /* ViewController.m in Sources */,
+				618CE5A02091BCE800EB6754 /* CLPButton.m in Sources */,
 				618CE598208ECE1900EB6754 /* CLPhotoBrowserCell.m in Sources */,
 				618CE59C208F294500EB6754 /* CLPCommonKit.m in Sources */,
 				618CE582208ECC4E00EB6754 /* main.m in Sources */,

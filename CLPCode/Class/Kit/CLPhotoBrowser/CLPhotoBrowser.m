@@ -8,6 +8,7 @@
 
 #import "CLPhotoBrowser.h"
 #import "CLPhotoBrowserCell.h"
+#import "CLPSystemMacro.h"
 
 @interface CLPhotoBrowser ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, CLPBrowserItemDelegate>
 {
@@ -216,7 +217,8 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return self.collection.frame.size;
+    CGSize size = self.collection.frame.size;
+    return size;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -245,8 +247,8 @@
         UICollectionViewFlowLayout* flow = [[UICollectionViewFlowLayout alloc]init];
         flow.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         flow.sectionInset = UIEdgeInsetsZero;
-        flow.minimumLineSpacing = 0;
-        flow.minimumInteritemSpacing = 0;
+        flow.minimumLineSpacing = 30*kScaleX;
+        flow.minimumInteritemSpacing = 30*kScaleX;
         _collection = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flow];
         [_collection setBackgroundColor:[UIColor clearColor]];
         [_collection registerClass:[CLPhotoBrowserCell class] forCellWithReuseIdentifier:@"photo_browser_cell"];

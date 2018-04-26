@@ -7,9 +7,25 @@
 //  快速创建视图
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "CLPHeader.h"
 
+typedef NS_ENUM(NSInteger, FONT_TYPE){
+    FONT_TYPE_REGULAR, //常规
+    FONT_TYPE_MEDIUM,//粗体
+    FONT_TYPE_LIGHT, //细体
+};
 @interface CLPCommonKit : NSObject
+
+
+/**
+ back font
+ */
+UIFont* CLPFont(CGFloat size, FONT_TYPE tp);
+
+/**
+ back str size
+ */
+CGSize CLPSize(NSString* str, UIFont* font, CGSize size);
 
 /**
  new label
